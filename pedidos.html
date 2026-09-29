@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="global.css">
+    <link rel="stylesheet" href="pedidos.css">
+    <link rel="stylesheet" href="admin.css">
+    
+    <title>Admin</title>
+</head>
+<body>
+    <header class="header-admin">
+        <h1 class="h1-admin">PAINEL ADMIN</h1>
+
+        <a class="link-admin" href="#"><img src="/public/icons/config.png"/></a>
+
+    </header>
+
+    <main>
+
+        <section>
+
+            <div class="box-prod">
+                <a class="link-prod" href="/admin.html">
+                    
+                    <img class="link-prod-img img-normal" src="/public/icons/boxw.png" alt="icone de caixa">
+                    <img class="link-prod-img img-ativo" src="/public/icons/box.png" alt="icone de caixa"> 
+                    Produtos
+                </a>
+
+                <a class="link-prod2" href="/pedidos.html"><img src="/public/icons/seta.png" alt="icone de caixa"> Pedidos</a>
+            </div>
+
+           
+        </section>
+
+        <div class="pedidos-container">
+
+        <header class="pagina-topo">
+            
+
+            <button id="btn-atualizar" class="btn-atualizar">
+                Atualizar
+            </button>
+        </header>
+
+        <section id="lista-pedidos" class="lista-pedidos">
+
+            <p class="carregando">
+                Carregando pedidos...
+            </p>
+
+        </section>
+    </div>
+   
+
+    <script type="module" src="pedidos.js"></script>
+</main>
+</body>
+</html>

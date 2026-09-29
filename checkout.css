@@ -1,0 +1,270 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    background: #f7f5f3;
+    font-family: Arial, sans-serif;
+    color: #222;
+}
+
+.checkout {
+    width: 100%;
+    max-width: 430px;
+    margin: 0 auto;
+    padding: 12px 16px 30px;
+}
+
+.voltar {
+    display: block;
+    margin-bottom: 14px;
+    color: #666;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+h1 {
+    font-size: 22px;
+    margin: 0 0 24px;
+}
+
+.card-checkout {
+    background: #fff;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    padding: 16px;
+    margin-bottom: 14px;
+}
+
+.card-checkout h2 {
+    margin: 0 0 14px;
+    font-size: 14px;
+}
+
+
+/* OPÇÕES DE ENTREGA */
+
+.opcoes-entrega {
+    display: flex;
+    gap: 10px;
+}
+
+.opcao-entrega {
+    flex: 1;
+    min-height: 92px;
+
+    background: #fff;
+
+    border: 1px solid #ddd;
+    border-radius: 10px;
+     color: #666;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    gap: 6px;
+
+    cursor: pointer;
+}
+
+.opcao-entrega .icone {
+    font-size: 22px;
+   
+}
+
+.opcao-entrega strong {
+    font-size: 14px;
+}
+
+.opcao-entrega small {
+    font-size: 11px;
+    color: #777;
+}
+
+.opcao-entrega.ativo {
+    border: 1px solid #f15a24;
+    color: #f15a24;
+}
+
+.truck{
+    width: 25px;
+}
+/* FORMULÁRIO */
+
+#form-checkout {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+#form-checkout input,
+#form-checkout textarea {
+
+    width: 100%;
+
+    border: none;
+    border-radius: 10px;
+
+    background: #f1efed;
+
+    padding: 13px;
+
+    font-size: 13px;
+
+    outline: none;
+}
+
+#form-checkout textarea {
+    height: 54px;
+    resize: none;
+}
+
+
+/* ENDEREÇO */
+
+#endereco {
+    display: none;
+}
+
+
+/* VALORES */
+
+.linha-valor,
+.linha-total {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.linha-valor {
+    font-size: 13px;
+    color: #777;
+}
+
+.linha-taxa {
+    display: none;
+    margin-top: 8px;
+}
+
+.linha-total {
+    border-top: 1px solid #ddd;
+    margin-top: 8px;
+    padding-top: 10px;
+
+    font-size: 15px;
+}
+
+.linha-total strong:last-child {
+    color: #f15a24;
+    font-size: 16px;
+}
+
+
+/* WHATSAPP */
+
+.btn-whatsapp {
+    width: 100%;
+
+    border: none;
+    border-radius: 12px;
+
+    padding: 15px;
+
+    background: #13a84a;
+    color: white;
+
+    font-size: 14px;
+    font-weight: bold;
+
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+.balao{
+    width: 25px;
+}
+
+.btn-whatsapp:hover {
+    opacity: 0.9;
+}
+
+.item-checkout {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 15px;
+    padding: 12px 0;
+    border-bottom: 1px solid #eee;
+}
+
+.informacoes-item {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.informacoes-item strong {
+    font-size: 14px;
+}
+
+.informacoes-item span {
+    font-size: 12px;
+    color: #777;
+}
+
+.controles-item {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.controles-item img{
+  width: 16px;
+}
+
+.btn-aumentar {
+    border: none;
+    background-color: #E26612;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    border-radius: 50%;
+    padding: 10px 14px;
+    width: 35px;
+    height: 35px;
+    cursor: pointer;
+}
+
+.btn-diminuir {
+    border: none;
+    background-color: #F3EEE8;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    border-radius: 50%;
+    padding: 10px 14px;
+    width: 35px;
+    height: 35px;
+    cursor: pointer;
+}
+
+.quantidade-item {
+    min-width: 20px;
+    text-align: center;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.subtotal-item {
+    min-width: 70px;
+    text-align: right;
+    
+    font-size: 14px;
+}

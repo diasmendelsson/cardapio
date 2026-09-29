@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="global.css">
+    <link rel="stylesheet" href="index.css">
+    <title>Início</title>
+</head>
+<body>
+    <header class="header">
+
+        <div class="box-logo">
+            <div class="div-img"><img class="img-logo" src="/public/logo/churras.png" alt="churrasqueira" /></div>
+            <h1>ESPETARIA RAÍZ</h1>
+        </div>
+
+        <p class="p-logo">Escolha seus espetos favoritos e faça seu pedido!</p>
+
+    
+        <a class="link" href="#">
+            <img class="img-link" src="/public//icons/estrela.png" alt="estrela" />
+            Avalie-nos no Google
+        </a>
+       
+    </header>
+
+    <main>
+        <section class="barra-lateral">
+            <a class="icone-barra" href="#" data-categoria="espetos">
+                <img class="img-icone icone-normal" src="/public/icons/espeto.png" alt="icone de espeto"/>
+
+                <img class="img-icone icone-ativo"
+                    src="/public/icons/espetow.png"
+                    alt=""
+                    aria-hidden="true">
+                    Espetos
+            </a>
+
+             <a class="icone-barra" href="#" data-categoria="picanha">
+                <img class="img-icone icone-normal" src="/public/icons/bife.png" alt="icone de espeto"/>
+                <img class="img-icone icone-ativo"
+                    src="/public/icons/bifew.png"
+                    alt=""
+                    aria-hidden="true">
+                    Picanha
+            </a>
+
+            <a class="icone-barra" href="#" data-categoria="jantinha">
+                <img class="img-icone icone-normal" src="/public/icons/restaurante.png" alt="icone de espeto"/>
+                <img class="img-icone icone-ativo"
+                    src="/public/icons/restaurantew.png"
+                    alt=""
+                    aria-hidden="true">
+                    Jantinha
+            </a>
+
+            <a class="icone-barra" href="#" data-categoria="bebidas">
+                <img class="img-icone icone-normal" src="/public/icons/bebida.png" alt="icone de espeto"/>
+                <img class="img-icone icone-ativo"
+                    src="/public/icons/bebidaw.png"
+                    alt=""
+                    aria-hidden="true">
+                    Bebidas
+            </a>
+
+            <a class="icone-barra" href="#" data-categoria="acompanhamentos">
+                <img class="img-icone icone-normal" src="/public/icons/salada.png" alt="icone de espeto"/>
+                <img class="img-icone icone-ativo"
+                    src="/public/icons/saladaw.png"
+                    alt=""
+                    aria-hidden="true">
+                    Acompanhamentos
+            </a>
+
+            <a class="icone-barra" href="#" data-categoria="arroz">
+                <img class="img-icone icone-normal" src="/public/icons/panela.png" alt="icone de espeto"/>
+                <img class="img-icone icone-ativo"
+                    src="/public/icons/panelaw.png"
+                    alt=""
+                    aria-hidden="true">
+                Arroz Temperado
+            </a>
+        </section>
+
+        <section class="produtos" id="produtos"></section>
+
+    </main>
+    
+    <a href="/checkout.html">
+    <button class="btn-cart btn-carrinho" id="btn-carrinho">
+    
+            
+            <div class="quantidade">
+                <div class="box-img">
+                    <img class="img-bag" src="/public/icons/bag.svg" alt="Carrinho">
+                </div>
+
+                <span class="span-item" id="quantidade-carrinho"></span>
+            </div>
+
+            <div class="box-cart">
+    
+                <span class="span-preco" id="valor-carrinho"></span>
+            </div>
+            
+    </button>
+    </a>
+    <script type="module" src="./app.js"></script>
+</body>
+</html>

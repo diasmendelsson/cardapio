@@ -1,0 +1,270 @@
+.link{
+    background-color: #E98C4D;
+    display: flex;
+    align-items: center;
+    border-radius: 2rem;
+    justify-content: center;
+    gap: 0.5rem;
+    width: 16rem;
+    padding: 0.5rem;
+    margin-top: 1rem;
+    color: #FFFFFF;
+    font-weight: 600;
+    
+}
+
+.img-link{
+    width: 20px;
+
+}
+
+.header{
+    background-color: #E26612;
+    padding: 1.5rem ;
+    color: #FFFFFF;
+    border-radius: 0.8rem;
+    
+}
+
+.header h1{
+  font-size: 1.6rem ;
+  margin-top: 0.5rem;
+
+ 
+}
+
+.p-logo{
+    margin-top: 0.5rem;
+    font-weight: 300;
+  
+}
+
+.div-img{
+    background-color: #E98C4D;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 0.8rem;
+    padding: 0.4rem;
+}
+
+.img-logo{
+     width:25px
+}
+
+.box-logo{
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    
+}
+
+.barra-lateral{
+    margin-top: 1.6rem;
+    display: flex;
+    gap: 0.6rem;
+    padding: 0.8rem;
+    overflow-x: auto;
+    white-space: nowrap;
+   
+}
+
+.icone-barra{
+    display: flex;
+    flex: 0 0 auto;
+    white-space: nowrap;
+    width: max-content;
+    align-items: center;
+    justify-content: center;
+    border: solid 1px #7E6F67;
+    border-radius: 2rem;
+    padding: 0.6rem 1rem;
+    color: #7E6F67;
+    font-weight: 600;
+    gap: 0.5rem;
+    transition: 0.2s;
+    -webkit-tap-highlight-color: transparent;
+}
+
+.icone-barra.ativo{
+    background-color: #E26612;
+    color: #FFFFFF;
+    border: none;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+     
+}
+
+.icone-ativo {
+    display: none;
+}
+
+.icone-barra.ativo .icone-normal {
+    display: none;
+}
+
+.icone-barra.ativo .icone-ativo {
+    display: block;
+}
+
+.img-icone{
+    width: 20px;
+}
+
+.produtos{
+    display: grid;
+    grid-template-columns: auto ;
+    gap: 20px;
+    padding: 15px;
+    padding-bottom: 140px;
+    
+}
+
+.card{
+    background: #fff;
+    border: solid 1px #E5E0DC;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    margin-top: 20px;
+    display: flex;
+    height: 350px;
+    flex-direction: column;
+}
+
+.img-card{
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+}
+
+.card-conteudo {
+    padding: 16px;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+}
+
+.tit-card{
+    font-size: 0.9rem;
+    font-weight: 600;
+    margin: 0 0 8px;
+}
+
+.desc-card{
+    color: #666;
+    line-height: 1.5;
+    margin: 0 0 20px;
+    font-size: 0.8rem;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+.card-footer {
+    margin-top: auto;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+}
+
+.preco-card {
+    font-size: 1rem;
+    font-weight: 700;
+    color: #E26612;;
+}
+
+.controle-quantidade{
+   
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-weight: bold;
+}
+
+.btn-adicionar {
+    border: none;
+    background-color: #E26612;
+    border-radius: 50%;
+    padding: 10px 14px;
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+}
+
+.btn-aumentar {
+    border: none;
+    background-color: #E26612;
+     
+    font-weight: bold;
+    border-radius: 50%;
+    padding: 10px 14px;
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+}
+
+.btn-diminuir {
+    border: none;
+    background-color: #F3EEE8;
+    font-weight: bold;
+    border-radius: 50%;
+    padding: 10px 14px;
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+}
+
+.btn-cart {
+    background-color: #E26612;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    width: calc(100% - 30px);
+
+    border: none;
+    border-radius: 15px;
+    padding: 15px;
+
+    position: fixed;
+    bottom: 15px;
+    left: 15px;
+
+    box-sizing: border-box;
+}
+
+.img-bag{
+    width: 50px;
+    height: 20px;
+}
+
+.box-img{
+    background-color: #E88541;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+}
+
+.quantidade{
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.span-preco{
+    color: white;
+    font-weight: bolder;
+    font-size: 1.1rem;
+}
+
+.span-item{
+    color: white;
+    font-weight: bolder;
+    font-size: 1rem;
+}

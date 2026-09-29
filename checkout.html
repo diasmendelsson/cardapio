@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Finalizar Pedido</title>
+
+    <link rel="stylesheet" href="checkout.css">
+    <link rel="stylesheet" href="global.css">
+    
+</head>
+
+<body>
+
+    <main class="checkout">
+
+        <!-- Voltar -->
+        <a href="index.html" class="voltar">
+            ← Voltar ao cardápio
+        </a>
+
+        <h1>FINALIZAR PEDIDO</h1>
+
+
+        <!-- SEUS ITENS -->
+        <section class="card-checkout">
+
+            <h2>Seus itens</h2>
+
+            <div id="lista-itens">
+
+                <!--
+                    Os produtos do localStorage
+                    serão inseridos aqui pelo JavaScript.
+                -->
+
+            </div>
+
+        </section>
+
+
+        <!-- COMO DESEJA RECEBER -->
+        <section class="card-checkout">
+
+            <h2>Como deseja receber?</h2>
+
+            <div class="opcoes-entrega">
+
+                <button
+                    type="button"
+                    id="btn-retirada"
+                    class="opcao-entrega ativo">
+
+                    <span class="icone">𖠿</span>
+
+                    <strong>Retirada</strong>
+
+                    <small>Grátis</small>
+
+                </button>
+
+
+                <button
+                    type="button"
+                    id="btn-entrega"
+                    class="opcao-entrega">
+
+                    <span class="icone">⛟</span>
+
+                    <strong>Entrega</strong>
+
+                    <small>+ R$ 3,00</small>
+
+                </button>
+
+            </div>
+
+        </section>
+
+
+        <!-- SEUS DADOS -->
+        <section class="card-checkout">
+
+            <h2>Seus dados</h2>
+
+            <form id="form-checkout">
+
+                <input
+                    type="text"
+                    id="cliente"
+                    placeholder="Seu nome *"
+                    required
+                >
+
+                <input
+                    type="tel"
+                    id="whatsapp"
+                    placeholder="Seu WhatsApp *"
+                    required
+                >
+
+
+                <!--
+                    Este campo ficará escondido inicialmente.
+                    Será mostrado quando escolher "Entrega".
+                -->
+
+                <input
+                    type="text"
+                    id="endereco"
+                    placeholder="Endereço completo *"
+                >
+
+
+                <textarea
+                    id="observacao"
+                    placeholder="Observações (opcional)"
+                ></textarea>
+
+            </form>
+
+        </section>
+
+
+        <!-- VALORES -->
+        <section class="card-checkout valores">
+
+            <div class="linha-valor">
+
+                <span>Subtotal</span>
+
+                <strong id="subtotal">
+                    R$ 0,00
+                </strong>
+
+            </div>
+
+
+            <div
+                class="linha-valor taxa"
+                id="linha-taxa">
+
+                <span>Entrega</span>
+
+                <strong id="taxa-entrega">
+                    R$ 0,00
+                </strong>
+
+            </div>
+
+
+            <div class="linha-total">
+
+                <strong>Total</strong>
+
+                <strong id="total">
+                    R$ 0,00
+                </strong>
+
+            </div>
+
+        </section>
+
+
+        <!-- BOTÃO WHATSAPP -->
+        <button
+            type="button"
+            id="btn-enviar"
+            class="btn-whatsapp">
+
+            <img class="balao" src="public/icons/balao.png" />
+            Enviar Pedido via WhatsApp
+
+        </button>
+
+    </main>
+
+
+    <script type="module" src="checkout.js"></script>
+
+</body>
+
+</html>

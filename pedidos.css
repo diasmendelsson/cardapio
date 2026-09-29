@@ -1,0 +1,366 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+
+    background: #f7f6f4;
+
+    font-family: Arial, Helvetica, sans-serif;
+
+    color: #222;
+}
+
+.pedidos-container {
+    width: 100%;
+    max-width: 900px;
+
+    margin: 0 auto;
+
+    padding: 25px 15px 40px;
+}
+
+
+/* TOPO DA PÁGINA */
+
+.pagina-topo {
+    display: flex;
+
+    justify-content: space-between;
+    align-items: center;
+
+    margin-bottom: 20px;
+}
+
+.pagina-topo h1 {
+    margin: 0;
+
+    font-size: 25px;
+}
+
+
+/* BOTÃO ATUALIZAR */
+
+.btn-atualizar {
+    border: none;
+
+    background: #e26612;
+    color: white;
+
+    padding: 9px 15px;
+
+    border-radius: 10px;
+
+    cursor: pointer;
+
+    font-size: 13px;
+}
+
+
+/* LISTA */
+
+.lista-pedidos {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 14px;
+}
+
+
+/* CARD */
+
+.pedido-card {
+    width: 100%;
+
+    background: white;
+
+    border: 1px solid #ddd;
+
+    border-radius: 14px;
+
+    padding: 15px;
+}
+
+
+/* TOPO DO CARD */
+
+.pedido-topo {
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    margin-bottom: 17px;
+}
+
+.pedido-identificacao {
+    display: flex;
+
+    align-items: center;
+
+    gap: 8px;
+}
+
+.pedido-identificacao strong {
+    font-size: 17px;
+}
+
+
+/* STATUS */
+
+.status {
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: 4px;
+
+    padding: 4px 9px;
+
+    border-radius: 20px;
+
+    font-size: 12px;
+
+    font-weight: 600;
+}
+
+.status-pendente {
+    background: #fff3cd;
+    color: #946200;
+}
+
+.status-preparo {
+    background: #fff0dc;
+    color: #d15b00;
+}
+
+.status-pronto {
+    background: #d9f8e5;
+    color: #168447;
+}
+
+.status-entregue {
+    background: #e8e8e8;
+    color: #555;
+}
+
+.status-cancelado {
+    background: #ffe2e2;
+    color: #c62828;
+}
+
+
+/* BOTÃO IMPRIMIR */
+
+.btn-imprimir {
+    border: none;
+
+    background: transparent;
+
+    color: #777;
+
+    font-size: 18px;
+
+    cursor: pointer;
+
+    padding: 3px 5px;
+}
+
+.btn-imprimir:hover {
+    color: #222;
+}
+
+
+/* CLIENTE */
+
+.pedido-cliente {
+    display: flex;
+
+    align-items: center;
+
+    gap: 5px;
+
+    margin-bottom: 6px;
+
+    font-size: 14px;
+}
+
+.pedido-cliente strong {
+    font-size: 15px;
+}
+
+
+/* INFORMAÇÕES */
+
+.pedido-info {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 3px;
+
+    color: #777;
+
+    font-size: 13px;
+
+    margin-bottom: 13px;
+}
+
+
+/* ITENS */
+
+.pedido-itens {
+    background: #f1efed;
+
+    border-radius: 13px;
+
+    padding: 10px;
+
+    margin-bottom: 12px;
+}
+
+.item-pedido {
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    gap: 10px;
+
+    padding: 3px 0;
+
+    font-size: 13px;
+}
+
+.item-pedido strong {
+    white-space: nowrap;
+
+    font-size: 13px;
+}
+
+
+/* RODAPÉ */
+
+.pedido-rodape {
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    gap: 10px;
+}
+
+.pedido-total {
+    color: #ed5b08;
+
+    font-size: 15px;
+}
+
+.pedido-acoes {
+    display: flex;
+
+    align-items: center;
+
+    gap: 8px;
+}
+
+
+/* CANCELAR */
+
+.btn-cancelar {
+    border: none;
+
+    background: #fff0f0;
+
+    color: #e11d2e;
+
+    padding: 8px 13px;
+
+    border-radius: 14px;
+
+    cursor: pointer;
+
+    font-size: 13px;
+}
+
+
+/* AVANÇAR STATUS */
+
+.btn-status {
+    border: none;
+
+    background: #ed680f;
+
+    color: white;
+
+    padding: 8px 14px;
+
+    border-radius: 14px;
+
+    cursor: pointer;
+
+    font-size: 13px;
+
+    font-weight: 600;
+}
+
+.btn-status:hover {
+    background: #d95d09;
+}
+
+
+/* PEDIDOS CANCELADOS / ENTREGUES */
+
+.pedido-cancelado {
+    opacity: 0.7;
+}
+
+
+/* QUANDO NÃO HÁ PEDIDOS */
+
+.sem-pedidos {
+    text-align: center;
+
+    color: #777;
+
+    padding: 40px 10px;
+}
+
+
+/* CARREGANDO */
+
+.carregando {
+    text-align: center;
+
+    color: #777;
+
+    padding: 30px;
+}
+
+
+/* CELULAR */
+
+@media (max-width: 600px) {
+
+    .pedidos-container {
+        padding: 15px 10px 30px;
+    }
+
+    .pedido-rodape {
+        align-items: flex-start;
+
+        flex-direction: column;
+    }
+
+    .pedido-acoes {
+        width: 100%;
+
+        justify-content: flex-end;
+    }
+
+}
