@@ -302,12 +302,13 @@ align-items: center;
    
     display: flex;
     align-items: center;
+    
     gap: 10px;
     border: solid 1px #E5E0DC;
     border-radius: 10px;
     margin-top: 16px;
     background-color: #FFFFFF;
-    padding: 10px;
+    padding: 16px;
 }
 
 .box-image{
@@ -335,4 +336,25 @@ align-items: center;
     font-weight: bold;
     color: #E26612;
     font-size: 14px;
+}
+
+.acoes-produto{
+    margin-left: auto;
+}
+
+.btn-editar, .btn-excluir{
+    background-color: transparent;
+    border: none;
+    margin-left: 6px;
+}
+
+.editar{
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+}
+.excluir{
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
 }

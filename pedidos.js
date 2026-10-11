@@ -1,4 +1,4 @@
-const truck = "../public/icons/truck.png"
+let pedidos = [];
 
 const listaPedidos = document.querySelector("#lista-pedidos");
 
@@ -28,7 +28,7 @@ async function carregarPedidos() {
             throw new Error("Erro ao buscar pedidos.");
         }
 
-        const pedidos = await resposta.json();
+        pedidos = await resposta.json();
 
         mostrarPedidos(pedidos);
 
@@ -443,14 +443,309 @@ async function cancelarPedido(id) {
 
 function imprimirPedido(id) {
 
-    console.log(
-        "Imprimir pedido:",
-        id
+    const pedido = pedidos.find(
+        pedido => pedido.id === Number(id)
     );
 
-    alert(
-        `Impressão do pedido #${id} será implementada na próxima etapa.`
-    );
+    if (!pedido) {
+        alert("Pedido não encontrado.");
+        return;
+    }
+
+    const janela = window.open("", "_blank");
+
+    if (!janela) {
+        alert("Não foi possível abrir a janela de impressão.");
+        return;
+    }
+
+    const itensHTML = pedido.itens.map(item => {
+
+        return `
+            <div class="item">
+                <span>
+                    ${item.quantidade}x ${item.nome}
+                </span>
+
+                <strong>
+                    R$ ${formatarValor(item.subtotal)}
+                </strong>
+            </div>
+        `;
+
+    }).join("");
+
+
+    const tipoEntrega =
+        pedido.tipo_entrega === "entrega"
+            ? "ENTREGA"
+            : "RETIRADA";
+
+
+    const endereco =
+        pedido.tipo_entrega === "entrega"
+            ? `
+                <div class="endereco">
+                    ${pedido.endereco}
+                </div>
+            `
+            : "";
+
+
+    const observacao =
+        pedido.observacao
+            ? `
+                <div class="observacao">
+                    <strong>Observação:</strong><br>
+                    ${pedido.observacao}
+                </div>
+            `
+            : "";
+
+
+    janela.document.write(`
+
+        <!DOCTYPE html>
+
+        <html lang="pt-BR">
+
+        <head>
+
+            <meta charset="UTF-8">
+
+            <title>
+                Pedido #${pedido.id}
+            </title>
+
+            <style>
+
+                * {
+                    box-sizing: border-box;
+                }
+
+                @page {
+                    size: 80mm auto;
+                    margin: 0;
+                }
+
+               body {
+                    margin: 0 auto;
+                    padding: 10px;
+                    width: 80mm;
+                    font-family: Arial, sans-serif;
+                    font-size: 13px;
+                    color: #000;
+                }
+
+                .titulo {
+                    text-align: center;
+
+                    font-size: 18px;
+
+                    font-weight: bold;
+
+                    margin-bottom: 5px;
+                }
+
+                .pedido {
+                    text-align: center;
+
+                    font-size: 15px;
+
+                    font-weight: bold;
+
+                    margin-bottom: 10px;
+                }
+
+                .linha {
+                    border-top: 1px dashed #000;
+
+                    margin: 8px 0;
+                }
+
+                .cliente {
+                    margin-bottom: 5px;
+                }
+
+                .tipo {
+                    text-align: center;
+
+                    font-weight: bold;
+
+                    margin: 8px 0;
+                }
+
+                .item {
+                    display: flex;
+
+                    justify-content: space-between;
+
+                    gap: 10px;
+
+                    margin: 5px 0;
+                }
+
+                .item strong {
+                    white-space: nowrap;
+                }
+
+                .valor {
+                    display: flex;
+
+                    justify-content: space-between;
+
+                    margin: 4px 0;
+                }
+
+                .total {
+                    display: flex;
+
+                    justify-content: space-between;
+
+                    font-size: 16px;
+
+                    font-weight: bold;
+
+                    margin-top: 8px;
+                }
+
+                .endereco {
+                    margin-top: 8px;
+                }
+
+                .observacao {
+                    margin-top: 10px;
+
+                    padding-top: 8px;
+
+                    border-top: 1px dashed #000;
+                }
+
+                .rodape {
+                    text-align: center;
+
+                    margin-top: 15px;
+
+                    font-size: 11px;
+                }
+
+            </style>
+
+        </head>
+
+
+        <body>
+
+            <div class="titulo">
+                PEDIDO
+            </div>
+
+            <div class="pedido">
+                #${pedido.id}
+            </div>
+
+            <div class="linha"></div>
+
+
+            <div class="cliente">
+
+                <strong>Cliente:</strong>
+                ${pedido.cliente}
+
+            </div>
+
+
+            <div>
+
+                <strong>WhatsApp:</strong>
+                ${pedido.whatsapp}
+
+            </div>
+
+
+            <div class="tipo">
+                ${tipoEntrega}
+            </div>
+
+
+            ${endereco}
+
+
+            <div class="linha"></div>
+
+
+            ${itensHTML}
+
+
+            <div class="linha"></div>
+
+
+            <div class="valor">
+
+                <span>Subtotal</span>
+
+                <strong>
+                    R$ ${formatarValor(
+                        Number(pedido.total) -
+                        Number(pedido.taxa_entrega)
+                    )}
+                </strong>
+
+            </div>
+
+
+            <div class="valor">
+
+                <span>Entrega</span>
+
+                <strong>
+                    R$ ${formatarValor(
+                        pedido.taxa_entrega
+                    )}
+                </strong>
+
+            </div>
+
+
+            <div class="total">
+
+                <span>TOTAL</span>
+
+                <span>
+                    R$ ${formatarValor(pedido.total)}
+                </span>
+
+            </div>
+
+
+            ${observacao}
+
+
+            <div class="rodape">
+
+                Obrigado pela preferência!
+
+            </div>
+
+
+            <script>
+
+                window.onload = function() {
+
+                    window.print();
+
+                };
+
+            <\/script>
+
+
+        </body>
+
+        </html>
+
+    `);
+
+    janela.document.close();
 }
 
 
